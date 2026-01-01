@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project</title>
+    <style>
+        body {
+            margin: 0%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            height: 170vh;
+            background-image: url("https://pluspng.com/img-png/batman-png-batman-png-pic-3225.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .container {
+            margin: 0%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid black;
+            padding: 20px;
+            border-radius: 50px;
+            margin-left: 420px;
+            margin-right: 360px;
+            margin-top: 170px;
+            color: black;
+            background-color: gray;
+            box-shadow: 10px 4px 1px solid gray;
+
+        }
+
+
+        h1 {
+            top: 25vh;
+            color: #f5c542;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-style:italic;
+            font-weight: bold;
+
+        }
+
+        input {
+            border: 50px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 5px;
+            font-size: medium;
+            background:#1e1e1e;
+            border: 2px solid #f5c542;
+            color: aliceblue;
+
+        }
+
+        button {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-color: goldenrod;
+            width: 100px;
+            padding: 4px;
+            border-radius: 20px;
+            border: 2px solid black;
+            color: black;
+        }
+
+        button:hover {
+            background-color: rgb(220, 187, 187);
+        }
+
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Welcome to Guessing Game🦇</h1>
+    <div class="container">
+        <img src="bat.png" alt=""><br><br>
+        <input id="checksum"><br><br>
+        <button onclick="check()">Check</button>
+        <p id="Result">Correct / Try again</p><br>
+        <p id="Score">Score: 20</p>
+    </div>
+    <script>
+        //selecting input box
+        var checksum = document.getElementById("checksum")
+        var Result = document.getElementById("Result")
+        var Score = document.getElementById("Score")
+        var randomNumber = Math.floor(Math.random() * 20) + 1
+        var totalScore = 20
+
+        function check() {
+            var enteredNumber = checksum.value
+            if (randomNumber == enteredNumber) {
+                console.log("Right")
+                Result.textContent = "✔️ Right"
+                alert("🦇You are Batsman! Correct")
+            }
+            else {
+                totalScore = totalScore - 1
+                Score.textContent = "Score:" + totalScore
+                Result.textContent = "✖️ Try Again"
+            }
+        }
+    </script>
+</body>
+
+</html>
